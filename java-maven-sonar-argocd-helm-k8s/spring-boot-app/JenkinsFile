@@ -1,10 +1,10 @@
 pipeline {
   agent {
-    docker {
-      image 'tejas77777/spring-boot-app:latest'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+        docker {
+            image 'maven:3.8.4-openjdk-11-slim'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+        }
     }
-  }
   stages {
     stage('Checkout') {
       steps {
